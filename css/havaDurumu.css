@@ -1,7 +1,9 @@
 :root {
     --shadow_color: black;
-    --bground-color : rgb(100, 149, 237);
+    --bground-color: rgb(100, 149, 237);
     --box-color: rgb(248, 240, 230);
+    --day-box-color: white;
+    --text-color : black;
 }
 
 html {
@@ -9,6 +11,7 @@ html {
     padding: 0;
     background-color: var(--bground-color);
     transition: all 1s;
+    color: var(--text-color);
 }
 
 .container {
@@ -33,13 +36,12 @@ html {
     border-radius: 20px;
     display: inline-block;
     height: 500px;
-    transition: all 1.5s cubic-bezier(0.23, 1, 0.320, 1);
-    padding-top: 10px;
+    transition: all 1.25s cubic-bezier(0.23, 1, 0.320, 1);
     text-align: center;
 }
 
 .box:hover {
-    box-shadow: 1px 1px 2px var(--shadow_color), 0 0 25px var(--shadow_color), 0 0 5px var(--shadow_color);
+    box-shadow: 1px 1px 1px var(--shadow_color), 0 0 25px var(--shadow_color), 0 0 5px var(--shadow_color);
 }
 
 #box-city {
@@ -57,6 +59,27 @@ html {
     visibility: hidden;
     opacity: 0;
     float: left;
+}
+
+.row {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.day-box {
+    width: 150px;
+    height: 200px;
+    background-color: var(--day-box-color);
+    position: relative;
+    float: left;
+    margin: 5px 5px;
+    transition: all 0.1s;
+}
+.day-box:hover {
+    box-shadow: 1px 1px 1px var(--shadow_color), 0 0 5px var(--shadow_color), 0 0 5px var(--shadow_color);
+    scale: 1.025;
 }
 
 #btn-detay {
@@ -83,6 +106,10 @@ html {
 
 /*! switch start*/
 
+#container-switch:hover {
+    box-shadow: 1px 1px 2px var(--shadow_color), 0 0 25px var(--shadow_color), 0 0 5px var(--shadow_color);
+}
+
 /* The switch - the box around the slider */
 #theme-toggle-button {
     font-size: 7px;
@@ -92,6 +119,7 @@ html {
     cursor: pointer;
     z-index: 1;
 }
+
 
 /* Hide default HTML checkbox */
 #toggle {
