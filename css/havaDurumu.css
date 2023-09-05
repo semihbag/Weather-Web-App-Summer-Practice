@@ -2,13 +2,14 @@
     --light_theme_color: rgb(100, 149, 237);
     --light_theme_box_color: rgb(248, 240, 230);
     --light_theme_box_hover_color: rgb(208, 198, 187);
-
+    --dark_theme_color: rgb(31, 45, 72);
 }
 
 html {
     margin: 0;
     padding: 0;
     background-color: var(--light_theme_color);
+    transition: all 1s;
 }
 
 .container {
@@ -101,7 +102,7 @@ html {
     top: 0px;
 }
 
-#container,
+#container-switch,
 #patches,
 #stars,
 #button,
@@ -114,7 +115,7 @@ html {
 }
 
 /* night sky background */
-#toggle:checked+svg #container {
+#toggle:checked+svg #container-switch {
     fill: #2b4360;
 }
 

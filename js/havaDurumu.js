@@ -2,6 +2,8 @@ let boxCity = document.querySelector('#box-city');
 let boxInfo = document.querySelector('#box-info');
 let btnDetay = document.querySelector('#btn-detay');
 let bool = true;
+let btnSwitch = document.querySelector('#sbtn');
+
 
 btnDetay.addEventListener('click', () => {
     if (bool) {
@@ -9,7 +11,6 @@ btnDetay.addEventListener('click', () => {
         boxInfo.style.opacity = "1";
         boxCity.style.left = "70%";
         boxInfo.style.right = "30%";
-        console.log('tıkladın');
         bool = false;
     }
     else {
@@ -17,9 +18,15 @@ btnDetay.addEventListener('click', () => {
         boxInfo.style.opacity = "0";
         boxCity.style.left = "0";
         boxInfo.style.right = "0";
-        console.log('tıkladın');
         bool = true;
     }
+});
+
+btnSwitch.addEventListener('click', (e) => {
+
+    let bgColor = document.getElementsByTagName("html")[0].style.backgroundColor;
+    bgColor = (bgColor === "var(--dark_theme_color)")? "var(--light_theme_color)" : "var(--dark_theme_color)";
+    document.querySelector('html').style.backgroundColor = bgColor;
 
 });
 
