@@ -3,7 +3,10 @@ let boxInfo = document.querySelector('#box-info');
 let btnDetay = document.querySelector('#btn-detay');
 let bool = true;
 let btnSwitch = document.querySelector('#sbtn');
-
+let boxes = document.querySelectorAll('.box');
+let bgColorBox;
+let bgColor;
+let shadowColor;
 
 btnDetay.addEventListener('click', () => {
     if (bool) {
@@ -23,10 +26,16 @@ btnDetay.addEventListener('click', () => {
 });
 
 btnSwitch.addEventListener('click', (e) => {
+    let key = window.getComputedStyle(document.documentElement).getPropertyValue("background").includes("rgb(100, 149, 237)");
 
-    let bgColor = document.getElementsByTagName("html")[0].style.backgroundColor;
-    bgColor = (bgColor === "var(--dark_theme_color)")? "var(--light_theme_color)" : "var(--dark_theme_color)";
-    document.querySelector('html').style.backgroundColor = bgColor;
+    bgColor = (key)? "rgb(31, 45, 72)" : "rgb(100, 149, 237)";
+    bgColorBox = (key)? "rgb(124, 142, 175)" : "rgb(248, 240, 230)";
+    shadowColor = (key)? "white" : "black";
+
+    document.documentElement.style.setProperty("--shadow_color", shadowColor);
+    document.documentElement.style.setProperty("--bground-color", bgColor);
+    document.documentElement.style.setProperty("--box-color", bgColorBox);
+
 
 });
 
