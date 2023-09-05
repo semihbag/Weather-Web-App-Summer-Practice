@@ -14,8 +14,6 @@ html {
 .container {
     display: flex;
     justify-content: center;
-    
-
 }
 
 .switch {
@@ -25,10 +23,8 @@ html {
 }
 
 .container-city-info {
-    
     position: fixed;
     width: 66%;
-    text-align: center;
     margin-top: 70px;
 }
 
@@ -39,7 +35,6 @@ html {
     height: 500px;
     transition: all 1.5s cubic-bezier(0.23, 1, 0.320, 1);
     padding-top: 10px;
-    
 }
 
 .box:hover {
@@ -52,7 +47,7 @@ html {
     width: 30%;
     position: relative;
     z-index: 1;
-    
+    float: left; 
 }
 
 #box-info {
@@ -61,12 +56,18 @@ html {
     position: relative;
     visibility: hidden;
     opacity: 0;
+    float: left;
 }
 
 #btn-detay {
     background-color: aqua;   
 }
 
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
 
 
