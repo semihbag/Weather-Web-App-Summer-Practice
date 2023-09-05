@@ -1,0 +1,159 @@
+:root {
+    --light_theme_color: rgb(100, 149, 237);
+    --light_theme_box_color: rgb(248, 240, 230);
+    --light_theme_box_hover_color: rgb(208, 198, 187);
+
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--light_theme_color);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+.switch {
+    width: 100%;
+    text-align: end;
+    padding-right: 5%;
+}
+
+.container-city-info {
+    
+    position: fixed;
+    width: 66%;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.box {
+    background-color: var(--light_theme_box_color);
+    border-radius: 20px;
+    display: inline-block;
+    height: 500px;
+    transition: all 1.5s cubic-bezier(0.23, 1, 0.320, 1);
+    padding-top: 10px;
+    
+}
+
+.box:hover {
+    background-color: var(--light_theme_box_hover_color);
+    box-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+}
+
+#box-city {
+    left: 0;
+    width: 30%;
+    position: relative;
+    z-index: 1;
+    
+}
+
+#box-info {
+    right: 0;
+    width: 69%;
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#btn-detay {
+    background-color: aqua;   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*! switch start*/
+
+/* The switch - the box around the slider */
+#theme-toggle-button {
+    font-size: 7px;
+    position: relative;
+    display: inline-block;
+    width: 12em;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Hide default HTML checkbox */
+#toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    top: 0px;
+}
+
+#container,
+#patches,
+#stars,
+#button,
+#sun,
+#moon,
+#cloud {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.25s;
+}
+
+/* night sky background */
+#toggle:checked+svg #container {
+    fill: #2b4360;
+}
+
+/* move button to right when checked */
+#toggle:checked+svg #button {
+    transform: translate(28px, 2.333px);
+}
+
+/* show/hide sun and moon based on checkbox state */
+#sun {
+    opacity: 1;
+}
+
+#toggle:checked+svg #sun {
+    opacity: 0;
+}
+
+#moon {
+    opacity: 0;
+}
+
+#toggle:checked+svg #moon {
+    opacity: 1;
+}
+
+/* show or hide background items on checkbox state */
+#cloud {
+    opacity: 1;
+}
+
+#toggle:checked+svg #cloud {
+    opacity: 0;
+}
+
+#stars {
+    opacity: 0;
+}
+
+#toggle:checked+svg #stars {
+    opacity: 1;
+}
+
+/*! switch end*/
