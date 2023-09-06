@@ -80,7 +80,15 @@ var cities = [
     "Kilis",
     "Osmaniye",
     "Düzce"
-  ];
-  
-  
-  
+];
+
+
+let cityList = document.querySelector('#city-list');
+
+
+console.log(cityList);
+for (var i = 0; i < cities.length; i++) {
+    var option = document.createElement("option");
+    option.value = cities[i];
+    cityList.appendChild(option);
+}
