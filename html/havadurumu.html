@@ -9,6 +9,14 @@
 </head>
 
 <body>
+
+
+
+
+
+
+
+
     <div class="container">
         <div class="switch">
             <label id="theme-toggle-button">
@@ -64,7 +72,7 @@
                         <g filter="url(#cloud)" transform="matrix(1, 0, 0, 1, -3.5, -3.5)">
                             <path fill="#fff" transform="translate(-3466.47 -160.94)"
                                 d="M3512.81,173.815a4.463,4.463,0,0,1,2.243.62.95.95,0,0,1,.72-1.281,4.852,4.852,0,0,1,2.623.519c.034.02-.5-1.968.281-2.716a2.117,2.117,0,0,1,2.829-.274,1.821,1.821,0,0,1,.854,1.858c.063.037,2.594-.049,3.285,1.273s-.865,2.544-.807,2.626a12.192,12.192,0,0,1,2.278.892c.553.448,1.106,1.992-1.62,2.927a7.742,7.742,0,0,1-3.762-.3c-1.28-.49-1.181-2.65-1.137-2.624s-1.417,2.2-2.623,2.2a4.172,4.172,0,0,1-2.394-1.206,3.825,3.825,0,0,1-2.771.774c-3.429-.46-2.333-3.267-2.2-3.55A3.721,3.721,0,0,1,3512.81,173.815Z"
-                                data-name="cloud" id="cloud"></path>
+                                data-name="cloud" id="cloud-switch"></path>
                         </g>
 
 
@@ -99,20 +107,53 @@
             </label>
         </div>
 
+
+
+
         <div class="container-city-info">
             <div class="box" id="box-city">
-                <input type="search" id="search-bar" placeholder="Şehir giriniz..." list="sehirler">
-                <datalist id="sehirler">
-                    <option value="İstanbul">
-                    <option value="Ankara">
-                    <option value="İzmir">
-                    <option value="Bursa">
-                </datalist>
 
+
+                <div class="search">
+                    <input type="text" placeholder="search" />
+                    <div class="symbol">
+                        <svg class="cloud">
+                            <use xlink:href="#cloud-search" />
+                        </svg>
+                        <svg class="lens">
+                            <use xlink:href="#lens" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" id="cloud-search">
+                        <path d="M31.714,25.543c3.335-2.17,4.27-6.612,2.084-9.922c-1.247-1.884-3.31-3.077-5.575-3.223h-0.021
+                        C27.148,6.68,21.624,2.89,15.862,3.931c-3.308,0.597-6.134,2.715-7.618,5.708c-4.763,0.2-8.46,4.194-8.257,8.919
+                        c0.202,4.726,4.227,8.392,8.991,8.192h4.873h13.934C27.784,26.751,30.252,26.54,31.714,25.543z" />
+                    </symbol>
+                    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="lens">
+                        <path d="M15.656,13.692l-3.257-3.229c2.087-3.079,1.261-7.252-1.845-9.321c-3.106-2.068-7.315-1.25-9.402,1.83
+                        s-1.261,7.252,1.845,9.32c1.123,0.748,2.446,1.146,3.799,1.142c1.273-0.016,2.515-0.39,3.583-1.076l3.257,3.229
+                        c0.531,0.541,1.404,0.553,1.95,0.025c0.009-0.008,0.018-0.017,0.026-0.025C16.112,15.059,16.131,14.242,15.656,13.692z M2.845,6.631
+                        c0.023-2.188,1.832-3.942,4.039-3.918c2.206,0.024,3.976,1.816,3.951,4.004c-0.023,2.171-1.805,3.918-3.995,3.918
+                        C4.622,10.623,2.833,8.831,2.845,6.631L2.845,6.631z" />
+                    </symbol>
+                </svg>
+
+
+
+
+
+
+
+
+
+
+                <datalist id="city-list"></datalist>
                 <p>Şehir ismi</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi asperiores quo, nisi eum dolor
-                    debitis amet culpa sint odio reprehenderit hic esse fuga magnam. Sequi veniam id officia alias
-                    debitis?</p>
+
                 <br>
                 <button id="btn-info">Detaylar</button>
                 <button id="btn-weekly">Haftalık</button>
@@ -148,6 +189,15 @@
                 exercitationem odit cumque omnis rerum.
                 Modi illo similique tempora, id ex possimus eum, quaerat, temporibus sed debitis impedit cum porro quas
                 dicta omnis velit repellendus quasi. Natus quaerat soluta voluptate, ab culpa aliquid possimus id.
+                <br>
+                <label for="secenekler">Seçenekler:</label>
+                <input list="secenekler" id="secenek" name="secenek">
+                <datalist id="secenekler">
+                    <option value="Seçenek 1">
+                    <option value="Seçenek 2">
+                    <option value="Seçenek 3">
+                </datalist>
+
             </div>
         </div>
         <div class="clearfix">
@@ -163,7 +213,7 @@
 
 
 
-
+    <script src="../js/cities.js"></script>
     <script src="../js/havaDurumu.js"></script>
 </body>
 

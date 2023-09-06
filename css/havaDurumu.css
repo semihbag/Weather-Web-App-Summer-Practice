@@ -3,10 +3,10 @@
     --bground-color: rgb(100, 149, 237);
     --box-color: rgb(248, 240, 230);
     --cart-box-color: white;
-    --text-color : black;
-    
-    
-    
+    --text-color: black;
+
+
+
 }
 
 html {
@@ -52,7 +52,7 @@ html {
     width: 30%;
     position: absolute;
     float: left;
-    z-index: 1;   
+    z-index: 1;
 }
 
 #search-bar {
@@ -61,11 +61,15 @@ html {
     background-color: var(--cart-box-color);
     margin-top: 20px;
     border: none;
-    border-radius: 20px;
+    border-radius: 7px;
     color: var(--text-color);
     padding-left: 20px;
     justify-content: center;
     font-size: 14px;
+}
+
+#search-bar:focus+#city-list {
+    background-color: aqua;
 }
 
 #box-info {
@@ -101,8 +105,9 @@ html {
     float: left;
     margin: 5px 5px;
     transition: all 0.1s;
-    
+
 }
+
 .day-box:hover {
     box-shadow: 1px 1px 1px var(--shadow_color), 0 0 5px var(--shadow_color), 0 0 5px var(--shadow_color);
     scale: 1.025;
@@ -165,7 +170,7 @@ html {
 #button,
 #sun,
 #moon,
-#cloud {
+#cloud-switch {
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 0.25s;
@@ -199,11 +204,11 @@ html {
 }
 
 /* show or hide background items on checkbox state */
-#cloud {
+#cloud-switch {
     opacity: 1;
 }
 
-#toggle:checked+svg #cloud {
+#toggle:checked+svg #cloud-switch {
     opacity: 0;
 }
 
@@ -216,3 +221,137 @@ html {
 }
 
 /*! switch end*/
+
+
+
+
+
+
+
+.search {
+    --background: #000;
+    --text-color: #414856;
+    --primary-color: #4f29f0;
+    --border-radius: 10px;
+    --width: 250px;
+    --height: 55px;
+    background: var(--background);
+    width: auto;
+    height: var(--height);
+    position: absolute;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(65, 72, 86, .05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search input[type="text"] {
+    position: relative;
+    width: var(--height);
+    height: var(--height);
+    font: 400 16px 'Varela Round', sans-serif;
+    color: var(--text-color);
+    border: 0;
+    box-sizing: border-box;
+    outline: none;
+    padding: 0 0 0 40px;
+    transition: width 0.6s ease;
+    z-index: 10;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.search input[type="text"]:focus {
+    z-index: 0;
+    opacity: 1;
+    width: var(--width);
+}
+
+.search input[type="text"]:focus~.symbol::before {
+    width: 0%;
+}
+
+.search input[type="text"]:focus~.symbol:after {
+    clip-path: inset(0% 0% 0% 100%);
+    transition: clip-path 0.04s linear 0.105s;
+}
+
+.search input[type="text"]:focus~.symbol .cloud {
+    top: -30px;
+    left: -30px;
+    transform: translate(0, 0);
+    transition: all 0.6s ease;
+    
+}
+
+.search input[type="text"]:focus~.symbol .lens {
+    top: 20px;
+    left: 15px;
+    transform: translate(0, 0);
+    fill: var(--primary-color);
+    transition: top 0.5s ease 0.1s, left 0.5s ease 0.1s, fill 0.3s ease;
+}
+
+.search .symbol {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search .symbol:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    z-index: -1;
+    transition: width 0.6s ease;
+}
+
+.search .symbol:after {
+    content: "";
+    position: absolute;
+    top: 21px;
+    left: 21px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    z-index: 1;
+    clip-path: inset(0% 0% 0% 0%);
+    transition: clip-path 0.04s linear 0.225s;
+}
+
+.search .symbol .cloud,
+.search .symbol .lens {
+    position: absolute;
+    fill: #fff;
+    stroke: none;
+    top: 50%;
+    left: 50%;
+}
+
+.search .symbol .cloud {
+    width: 35px;
+    height: 32px;
+    transform: translate(-50%, -60%);
+    transition: all 0.6s ease;
+}
+
+.search .symbol .lens {
+    fill: #fff;
+    width: 16px;
+    height: 16px;
+    z-index: 2;
+    top: 24px;
+    left: 24px;
+    transition: top 0.3s ease, left 0.3s ease, fill 0.2s ease 0.2s;
+}

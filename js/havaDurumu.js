@@ -13,6 +13,9 @@ let bgColorDayBox;
 let shadowColor;
 let textColor;
 
+
+
+
 btnWeekly.addEventListener('click', () => {
     if (!bool){
       closeBox(boxCurrent);
