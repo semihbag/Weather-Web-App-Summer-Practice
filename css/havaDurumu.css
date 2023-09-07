@@ -356,6 +356,11 @@ html {
     transition: top 0.3s ease, left 0.3s ease, fill 0.2s ease 0.2s;
 }
 
+.switch g,
+.switch path {
+  transform-origin: 0% 0%;
+}
+
 /*! search end*/
 
 
@@ -412,7 +417,7 @@ html {
     -webkit-animation-direction: normal;
             animation-direction: normal;
   }
-  
+ 
   /* SUN */
   .climacon_componentWrap-sun {
     -webkit-animation-name: rotate;

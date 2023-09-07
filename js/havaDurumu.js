@@ -43,14 +43,11 @@ function setDayIcons(day, icon) {
     fetch('../icons/' + icon + '.html')
         .then(response => response.text())
         .then(data => {
-            console.log('#'+day);
-            console.log(icon);
-            console.log(data);
-            document.querySelector('#'+day).innerHTML = data;
+            document.querySelector('#' + day).innerHTML = data;
         });
 }
 
-let w = "sun";
+let w = "cloudLightningMoon";
 setDayIcons('monday', w);
 setDayIcons('tuesday', w);
 setDayIcons('wednesday', w);
@@ -58,7 +55,7 @@ setDayIcons('thursday', w);
 setDayIcons('friday', w);
 setDayIcons('saturday', w);
 setDayIcons('sunday', w);
-    
+
 
 // open weekly page
 btnWeekly.addEventListener('click', () => {
