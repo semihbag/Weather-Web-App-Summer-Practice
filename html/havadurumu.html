@@ -9,14 +9,6 @@
 </head>
 
 <body>
-
-
-
-
-
-
-
-
     <div class="container">
         <div class="switch">
             <label id="theme-toggle-button">
@@ -47,8 +39,8 @@
                             </g>
 
 
-                            <g data-name="moon" id="moon">
-                                <g filter="url(#moon)" transform="matrix(1, 0, 0, 1, -31.5, -5.83)">
+                            <g data-name="moon" id="moon-s">
+                                <g filter="url(#moon-s)" transform="matrix(1, 0, 0, 1, -31.5, -5.83)">
                                     <circle fill="#cce6ee" transform="translate(31.5 5.83)" r="15.167" cy="15.167"
                                         cx="15.167" data-name="moon" id="moon-3"></circle>
                                 </g>
@@ -154,22 +146,44 @@
                 <datalist id="city-list"></datalist>
                 <p>Şehir ismi</p>
 
+
                 <br>
                 <button id="btn-info">Detaylar</button>
                 <button id="btn-weekly">Haftalık</button>
             </div>
             <div class="box" id="box-weekly">
                 <div class="row" id="row-1">
-                    <div class="day-box box">Pazartesi</div>
-                    <div class="day-box box">Salı</div>
-                    <div class="day-box box">Çarşamba</div>
-                    <div class="day-box box">Perşembe</div>
+                    <div class="day-box box">
+                        Pazartesi
+                        <div class="icon-box" id="monday"></div>
+                    </div>
+                    <div class="day-box box">
+                        Salı
+                        <div class="icon-box" id="tuesday"></div>
+                    </div>
+                    <div class="day-box box">
+                        Çarşamba
+                        <div class="icon-box" id="wednesday""></div>
+                    </div>
+                    <div class="day-box box">
+                        Perşembe
+                        <div class="icon-box" id="thursday"></div>
+                    </div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="row" id="row-2">
-                    <div class="day-box box">Cuma</div>
-                    <div class="day-box box">Cumartesi</div>
-                    <div class="day-box box">Pazar</div>
+                    <div class="day-box box">
+                        Cuma
+                        <div class="icon-box" id="friday"></div>
+                    </div>
+                    <div class="day-box box" >
+                        Cumartesi
+                        <div class="icon-box"id="saturday"></div>
+                    </div>
+                    <div class="day-box box">
+                        Pazar
+                        <div class="icon-box" id="sunday"></div>
+                    </div>
                     <div class="clearfix"></div>
                 </div>
 

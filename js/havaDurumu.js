@@ -2,11 +2,16 @@ let boxCity = document.querySelector('#box-city');
 let boxInfo = document.querySelector('#box-info');
 let boxWeekly = document.querySelector('#box-weekly');
 let boxCurrent;
+
 let btnWeekly = document.querySelector('#btn-weekly');
 let btnInfo = document.querySelector('#btn-info');
+
 let bool = true;        // true means city box on left side
 let btnSwitch = document.querySelector('#sbtn');
 let boxes = document.querySelectorAll('.box');
+
+let iconBoxes = document.querySelectorAll('.icon-box');
+
 let bgColor;
 let bgColorBox;
 let bgColorDayBox;
@@ -14,30 +19,15 @@ let shadowColor;
 let textColor;
 
 
-
-
-btnWeekly.addEventListener('click', () => {
-    if (!bool){
-      closeBox(boxCurrent);
-    }
-    openBox(boxWeekly);
-});
-
-btnInfo.addEventListener('click', () => {
-    if (!bool){
-        closeBox(boxCurrent);
-      }
-      openBox(boxInfo);
-});
-
+// change theme
 btnSwitch.addEventListener('click', (e) => {
- 
+
     let key = window.getComputedStyle(document.documentElement).getPropertyValue("background").includes("rgb(100, 149, 237)");
-    bgColor = (key)? "rgb(19, 18, 20)" : "rgb(100, 149, 237)";
-    bgColorBox = (key)? "rgb(29, 28, 31)" : "rgb(248, 240, 230)";
-    bgColorDayBox = (key)? "rgba(0, 0, 0, 0.1)" : "white";
-    shadowColor = (key)? "white" : "black";
-    textColor = (key)? "white" : "black";
+    bgColor = (key) ? "rgb(19, 18, 20)" : "rgb(100, 149, 237)";
+    bgColorBox = (key) ? "rgb(29, 28, 31)" : "rgb(248, 240, 230)";
+    bgColorDayBox = (key) ? "rgba(0, 0, 0, 0.1)" : "white";
+    shadowColor = (key) ? "white" : "black";
+    textColor = (key) ? "white" : "black";
 
     document.documentElement.style.setProperty("--shadow_color", shadowColor);
     document.documentElement.style.setProperty("--bground-color", bgColor);
@@ -47,7 +37,48 @@ btnSwitch.addEventListener('click', (e) => {
 });
 
 
+//set day icon
+function setDayIcons(day, icon) {
 
+    fetch('../icons/' + icon + '.html')
+        .then(response => response.text())
+        .then(data => {
+            console.log('#'+day);
+            console.log(icon);
+            console.log(data);
+            document.querySelector('#'+day).innerHTML = data;
+        });
+}
+
+let w = "sun";
+setDayIcons('monday', w);
+setDayIcons('tuesday', w);
+setDayIcons('wednesday', w);
+setDayIcons('thursday', w);
+setDayIcons('friday', w);
+setDayIcons('saturday', w);
+setDayIcons('sunday', w);
+    
+
+// open weekly page
+btnWeekly.addEventListener('click', () => {
+    if (!bool) {
+        closeBox(boxCurrent);
+    }
+    openBox(boxWeekly);
+});
+
+
+// open info page
+btnInfo.addEventListener('click', () => {
+    if (!bool) {
+        closeBox(boxCurrent);
+    }
+    openBox(boxInfo);
+});
+
+
+// open any page
 function openBox(box) {
     box.style.visibility = "initial";
     box.style.opacity = "1";
@@ -57,6 +88,8 @@ function openBox(box) {
     bool = false;
 }
 
+
+// close any page
 function closeBox(box) {
     console.log("close box");
     box.style.visibility = "hidden";
@@ -69,36 +102,6 @@ function closeBox(box) {
 
 
 
-// function openCloseInfoBox() {
-//     if (bool) {
-//         boxInfo.style.visibility = "initial";
-//         boxInfo.style.opacity = "1";
-//         boxCity.style.left = "70.5%";
-//         boxInfo.style.right = "30%";
-//         bool = false;
-//     }
-//     else {
-//         boxInfo.style.visibility = "hidden";
-//         boxInfo.style.opacity = "0";
-//         boxCity.style.left = "0";
-//         boxInfo.style.right = "0";
-//         bool = true;
-//     }
-// }
 
-// function openCloseWeekBox(){
-//     if (bool) {
-//         boxWeekly.style.visibility = "initial";
-//         boxWeekly.style.opacity = "1";
-//         boxCity.style.left = "70.5%";
-//         boxWeekly.style.right = "30%";
-//         bool = false;
-//     }
-//     else {
-//         boxWeekly.style.visibility = "hidden";
-//         boxWeekly.style.opacity = "0";
-//         boxCity.style.left = "0";
-//         boxWeekly.style.right = "0";
-//         bool = true;
-//     }
-// }
+
+
