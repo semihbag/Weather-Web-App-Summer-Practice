@@ -19,16 +19,23 @@ html {
     justify-content: center;
 }
 
-.switch {
+.header {
     width: 100%;
-    text-align: end;
     padding-right: 5%;
+    padding-left: 16.599%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-holder {
+  width: 50px;
+  padding-top: 30px;
 }
 
 .container-city-info {
     position: fixed;
     width: 66%;
-    margin-top: 70px;
+    margin-top: 95px;
 }
 
 .box {
@@ -52,21 +59,10 @@ html {
     z-index: 1;
 }
 
-#search-bar {
-    width: 90%;
-    height: 40px;
-    background-color: var(--cart-box-color);
-    margin-top: 20px;
-    border: none;
-    border-radius: 7px;
-    color: var(--text-color);
-    padding-left: 20px;
-    justify-content: center;
-    font-size: 14px;
-}
 
-#search-bar:focus+#city-list {
-    background-color: aqua;
+#box-city #day-icon .icon{
+  width: 200px;
+  height: 200px;
 }
 
 #box-info {
@@ -102,12 +98,32 @@ html {
     float: left;
     margin: 5px 5px;
     transition: all 0.1s;
-
+    
 }
 
 .day-box:hover {
     box-shadow: 1px 1px 1px var(--shadow_color), 0 0 5px var(--shadow_color), 0 0 5px var(--shadow_color);
     scale: 1.025;
+}
+
+.icon-box {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+
+.degree {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.calendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calendar .day-name {
+  margin-left: 3px;
 }
 
 #btn-info {
@@ -247,6 +263,10 @@ html {
     align-items: center;
 }
 
+.search:hover {
+  box-shadow: 1px 1px 1px var(--shadow_color), 0 0 25px var(--shadow_color), 0 0 5px var(--shadow_color);
+}
+
 .search input[type="text"] {
     position: relative;
     width: var(--height);
@@ -356,13 +376,12 @@ html {
     transition: top 0.3s ease, left 0.3s ease, fill 0.2s ease 0.2s;
 }
 
-.switch g,
-.switch path {
+#theme-toggle-button g,
+#theme-toggle-button path {
   transform-origin: 0% 0%;
 }
 
 /*! search end*/
-
 
 
 

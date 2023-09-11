@@ -37,6 +37,8 @@ btnSwitch.addEventListener('click', (e) => {
 });
 
 
+
+
 //set day icon
 function setDayIcons(day, icon) {
 
@@ -45,17 +47,20 @@ function setDayIcons(day, icon) {
         .then(data => {
             document.querySelector('#' + day).innerHTML = data;
         });
+
+    
 }
 
-let w = "cloudLightningMoon";
-setDayIcons('monday', w);
-setDayIcons('tuesday', w);
-setDayIcons('wednesday', w);
-setDayIcons('thursday', w);
-setDayIcons('friday', w);
-setDayIcons('saturday', w);
-setDayIcons('sunday', w);
+let w = "cloudDrizzleSun";
+setDayIcons('day-1', w);
+setDayIcons('day-2', w);
+setDayIcons('day-3', w);
+setDayIcons('day-4', w);
+setDayIcons('day-5', w);
+setDayIcons('day-6', w);
+setDayIcons('day-7', w);
 
+setDayIcons('day-icon','sun')
 
 // open weekly page
 btnWeekly.addEventListener('click', () => {
