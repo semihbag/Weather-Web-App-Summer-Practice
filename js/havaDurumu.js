@@ -22,8 +22,8 @@ let textColor;
 // change theme
 btnSwitch.addEventListener('click', (e) => {
 
-    let key = window.getComputedStyle(document.documentElement).getPropertyValue("background").includes("rgb(100, 149, 237)");
-    bgColor = (key) ? "rgb(19, 18, 20)" : "rgb(100, 149, 237)";
+    let key = window.getComputedStyle(document.documentElement).getPropertyValue("background").includes("rgb(175, 228, 228)");
+    bgColor = (key) ? "rgb(19, 18, 20)" : "rgb(175, 228, 228)";
     bgColorBox = (key) ? "rgb(29, 28, 31)" : "rgb(248, 240, 230)";
     bgColorDayBox = (key) ? "rgba(0, 0, 0, 0.1)" : "white";
     shadowColor = (key) ? "white" : "black";
