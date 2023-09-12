@@ -42,13 +42,13 @@ btnSwitch.addEventListener('click', (e) => {
 //set day icon
 function setDayIcons(day, icon) {
 
+    let selectedDay = document.querySelector('#' + day);
     fetch('../icons/' + icon + '.html')
         .then(response => response.text())
         .then(data => {
-            document.querySelector('#' + day).innerHTML = data;
+            selectedDay.querySelector('.icon-box').innerHTML = data;
         });
 
-    
 }
 
 let w = "cloudDrizzleSun";
@@ -60,7 +60,11 @@ setDayIcons('day-5', w);
 setDayIcons('day-6', w);
 setDayIcons('day-7', w);
 
-setDayIcons('day-icon','sun')
+// todays icon
+setDayIcons('today-info','sun');
+setDayIcons('sunrise','sunriseAlt');
+setDayIcons('sunset','sunsetAltFill');
+
 
 // open weekly page
 btnWeekly.addEventListener('click', () => {
@@ -100,8 +104,6 @@ function closeBox(box) {
     box.style.right = "0";
     bool = true;
 }
-
-
 
 
 
