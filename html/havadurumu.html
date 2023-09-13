@@ -244,7 +244,7 @@
             </div>
             <div class="box" id="box-info">
 
-   
+
                 <div class="box" id="air-and-astro">
                     <div class="air box">
 
@@ -252,33 +252,59 @@
                     <div class="astro box">
                         <div class="sunrise" id="sunrise">
                             <div class="icon-box"></div>
-                            Gün Doğumu
+                            <span class="value" id="value-sunrise">00:00</span>
                             <br>
-                            <span id="sunrise-time">00:00</span>
+                            Gün Doğumu
                         </div>
                         <div class="sunset" id="sunset">
                             <div class="icon-box"></div>
-                            Gün Batımı
+                            <span class="value" id="value-sunset">00:00</span>
                             <br>
-                            <span id="sunset-time">00:00</span>
+                            Gün Batımı
                         </div>
                         <div class="clearfix"></div>
-                    </div>   
+                    </div>
 
                 </div>
 
                 <div class="box" id="other">
                     <div class="other-item" id="humidity">
-                        <img src="../images/humidity.png" alt="">
+                        <img src="../images/humidity.png" alt="" id="humidity-icon">
+                        <br>
+                        %
+                        <span class="value" id="value-humidity">80</span>
+                        <br>
+                        Nem
                     </div>
-                    <div class="other-item">
-
+                    <div class="other-item" id="wind">
+                        <img src="../images/wind.png" alt="" id="wind-icon">
+                        <br>
+                        <span class="value" id="value-wind">3</span>
+                        km
+                        <br>
+                        Rüzgar
                     </div>
-                    <div class="other-item">
-
+                    <div class="other-item" id="pressure">
+                        <img src="../images/pressure.png" alt="" id="pressure-icon">
+                        <br>
+                        <span class="value" id="value-pressure">1011</span>
+                        hPa
+                        <br>
+                        Basınç
                     </div>
-                    <div class="other-item">
-                        hissedilen sıcaklık
+                    <div class="other-item" id="max-min-degree">
+                        <img src="../images/temperature.png" alt="" id="max-min-degree-icon">
+                        <br>
+                        <span class="value" id="value-max-min-degree">23°C / 17°C</span>
+                        <br>
+                        Max / Min
+                    </div>
+                    <div class="other-item" id="feels-like">
+                        <img src="../images/thermometer.png" alt="" id="feels-like-icon">
+                        <br>
+                        <span class="value" id="value-feels-like">23°C</span>
+                        <br>
+                        Hissedilen
                     </div>
                     <div class="clearfix"></div>
                 </div>

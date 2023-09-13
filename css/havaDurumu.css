@@ -98,14 +98,14 @@ html {
   height: 100%;
   background-color: wheat;
   display: flexbox;
-  
+
 }
 
-.sunrise, 
-.sunset{
+.sunrise,
+.sunset {
   width: 45%;
   height: 90%;
-  background-color: #fff;
+  background-color: var(--cart-box-color);
   border-radius: 20px;
   float: left;
   margin: 6.5px;
@@ -119,12 +119,22 @@ html {
 }
 
 .other-item {
-  width: 22%;
+  width: 17%;
   height: 90%;
-  background-color: white;
+  background-color: var(--cart-box-color);
   border-radius: 20px;
   float: left;
   margin: 8px 10px;
+}
+
+#humidity-icon,
+#wind-icon,
+#max-min-degree-icon,
+#pressure-icon,
+#feels-like-icon {
+  width: 70px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 #hours {

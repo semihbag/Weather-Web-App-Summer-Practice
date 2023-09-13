@@ -11,6 +11,11 @@ let btnSwitch = document.querySelector('#sbtn');
 let boxes = document.querySelectorAll('.box');
 
 let iconBoxes = document.querySelectorAll('.icon-box');
+let humidityIcon = document.querySelector('#humidity-icon');
+let windy = document.querySelector('#wind-icon');
+let feelsLike = document.querySelector('#feels-like-icon');
+let maxMinDegree = document.querySelector('#max-min-degree-icon');
+let pressure = document.querySelector('#pressure-icon');
 
 let bgColor;
 let bgColorBox;
@@ -28,6 +33,11 @@ btnSwitch.addEventListener('click', (e) => {
     bgColorDayBox = (key) ? "rgba(0, 0, 0, 0.1)" : "white";
     shadowColor = (key) ? "white" : "black";
     textColor = (key) ? "white" : "black";
+    humidityIcon.src = (key)? "../images/humidity_white.png" : "../images/humidity.png";
+    windy.src = (key)? "../images/wind_white.png" : "../images/wind.png";
+    feelsLike.src = (key)? "../images/thermometer_white.png" : "../images/thermometer.png";
+    maxMinDegree.src = (key)? "../images/temperature_white.png" : "../images/temperature.png";
+    pressure.src = (key)? "../images/pressure_white.png" : "../images/pressure.png";
 
     document.documentElement.style.setProperty("--shadow_color", shadowColor);
     document.documentElement.style.setProperty("--bground-color", bgColor);
