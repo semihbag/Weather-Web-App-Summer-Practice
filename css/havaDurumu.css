@@ -57,6 +57,25 @@ html {
   position: absolute;
   float: left;
   z-index: 1;
+  padding-top: 30px;
+}
+
+#city-name {
+  font-size: 25px;
+  font-weight: bold;
+
+}
+
+.currend-degree {
+  width: 200px;
+  height: 100px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  font-weight: bold;
+  font-size: 80px;
+
 }
 
 #box-city #today-info .icon-box,
@@ -64,6 +83,7 @@ html {
   width: 200px;
   height: 200px;
 }
+
 
 #box-info {
   right: 0;
@@ -79,11 +99,6 @@ html {
   margin-top: 4px;
   width: 95%;
   height: 32%;
-  justify-content: center;
-}
-
-#air-and-astro:hover {
-  box-shadow: none;
 }
 
 .air {
@@ -92,13 +107,29 @@ html {
   background-color: wheat;
   display: flexbox;
 }
+.air-info {
+  width: 31%;
+  height: 45%;
+  background-color: var(--cart-box-color);
+  border-radius: 15px;
+  float: left;
+  margin: 3.5px 4.5px;
+  color: #000;
+}
 
 .astro {
   width: 39.7%;
   height: 100%;
   background-color: wheat;
   display: flexbox;
+}
 
+.air:hover,
+.astro:hover,
+#air-and-astro:hover,
+#other:hover,
+#hours:hover{
+  box-shadow: none;
 }
 
 .sunrise,
@@ -155,6 +186,12 @@ html {
 
 }
 
+.hour .icon-box,
+.hour .icon {
+  width: 60px;
+  height: 60px;
+}
+
 #box-weekly {
   right: 0;
   width: 70%;
@@ -182,6 +219,13 @@ html {
 
 }
 
+#btn-info:hover,
+#btn-weekly:hover,
+.air-info:hover,
+.sunrise:hover,
+.sunset:hover,
+.other-item:hover,
+.hour:hover,
 .day-box:hover {
   box-shadow: 1px 1px 1px var(--shadow_color), 0 0 5px var(--shadow_color), 0 0 5px var(--shadow_color);
   scale: 1.025;
@@ -210,11 +254,19 @@ html {
 
 #btn-info {
   background-color: aqua;
+  width: 100px;
+  height: 50px;
+  border-radius: 20px 0px 0px 20px;
+  cursor: pointer;
 }
 
 
-#btn-week {
-  background-color: plum;
+#btn-weekly {
+  background-color: aqua;
+  width: 100px;
+  height: 50px;
+  border-radius: 0px 20px 20px 0px;
+  cursor: pointer;
 }
 
 .clearfix::after {

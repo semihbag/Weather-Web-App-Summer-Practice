@@ -11,6 +11,8 @@ let btnSwitch = document.querySelector('#sbtn');
 let boxes = document.querySelectorAll('.box');
 
 let iconBoxes = document.querySelectorAll('.icon-box');
+let calenderIcons = document.querySelectorAll('.calender-icon');
+
 let humidityIcon = document.querySelector('#humidity-icon');
 let windy = document.querySelector('#wind-icon');
 let feelsLike = document.querySelector('#feels-like-icon');
@@ -38,6 +40,10 @@ btnSwitch.addEventListener('click', (e) => {
     feelsLike.src = (key)? "../images/thermometer_white.png" : "../images/thermometer.png";
     maxMinDegree.src = (key)? "../images/temperature_white.png" : "../images/temperature.png";
     pressure.src = (key)? "../images/pressure_white.png" : "../images/pressure.png";
+    
+    calenderIcons.forEach(function(item){
+        item.querySelector('img').src = (key)? "../images/calendar_white.png" : "../images/calendar.png";
+    });
 
     document.documentElement.style.setProperty("--shadow_color", shadowColor);
     document.documentElement.style.setProperty("--bground-color", bgColor);
@@ -50,31 +56,40 @@ btnSwitch.addEventListener('click', (e) => {
 
 
 //set day icon
-function setDayIcons(day, icon) {
-
-    let selectedDay = document.querySelector('#' + day);
+function setIdIcons(id, icon) {
+    let selectedDay = document.querySelector('#' + id);
     fetch('../icons/' + icon + '.html')
         .then(response => response.text())
         .then(data => {
             selectedDay.querySelector('.icon-box').innerHTML = data;
         });
-
 }
 
+
 let w = "cloudDrizzleSun";
-setDayIcons('day-1', w);
-setDayIcons('day-2', w);
-setDayIcons('day-3', w);
-setDayIcons('day-4', w);
-setDayIcons('day-5', w);
-setDayIcons('day-6', w);
-setDayIcons('day-7', w);
+setIdIcons('day-1', w);
+setIdIcons('day-2', w);
+setIdIcons('day-3', w);
+setIdIcons('day-4', w);
+setIdIcons('day-5', w);
+setIdIcons('day-6', w);
+setIdIcons('day-7', w);
+
 
 // todays icon
-setDayIcons('today-info','sun');
-setDayIcons('sunrise','sunriseAlt');
-setDayIcons('sunset','sunsetAltFill');
+setIdIcons('today-info','sun');
+setIdIcons('sunrise','sunriseAlt');
+setIdIcons('sunset','sunsetAltFill');
 
+// hours icons
+setIdIcons('h0', 'sun');
+setIdIcons('h3', 'sun');
+setIdIcons('h6', 'sun');
+setIdIcons('h9', 'sun');
+setIdIcons('h12', 'sun');
+setIdIcons('h15', 'sun');
+setIdIcons('h18', 'sun');
+setIdIcons('h21', 'sun');
 
 // open weekly page
 btnWeekly.addEventListener('click', () => {
