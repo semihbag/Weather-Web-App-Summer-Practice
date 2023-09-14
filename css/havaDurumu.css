@@ -78,6 +78,14 @@ html {
 
 }
 
+#w-mode {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+
+
 #box-city #today-info .icon-box,
 #box-city #today-info .icon {
   width: 200px;

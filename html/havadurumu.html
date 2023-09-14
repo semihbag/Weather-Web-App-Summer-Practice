@@ -13,7 +13,8 @@
         <div class="header">
             <div class="search-holder">
                 <div class="search">
-                    <input type="text" placeholder="şehir ismi giriniz" />
+                    <input type="text" list="city-list" placeholder="şehir ismi giriniz" id="city-input"/>
+                    <datalist id="city-list"></datalist>
                     <div class="symbol">
                         <svg class="cloud">
                             <use xlink:href="#cloud-search" />
@@ -132,15 +133,17 @@
 
         <div class="container-city-info">
             <div class="box" id="box-city">
-
-                <datalist id="city-list"></datalist>
                 <span id="city-name">İstanbul</span>
                 <div id="today-info">
                     <div class="icon-box"></div>
                     <div class="currend-degree">
-                        27°C
+                        <span id="d"></span>
+                        °C
                     </div>
-                    Parçalı Bulutlu
+                    <span id="w-mode">Güneşli</span>
+                    <br>
+                    Son Güncelleme: 
+                    <span id="last-update">14:00</span>
 
                 </div>
 
@@ -257,42 +260,42 @@
                             <img src="../images/co2.png" alt="" style="width: 40px;
                             margin-top: 5px;">
                             <br>
-                            <span class="value" id="value-co2">20</span>
+                            <span class="value" id="value-co2">0</span>
                             μg/m3
                         </div>
                         <div class="air-info">
                             <img src="../images/ozone.png" alt="" style="width: 40px;
                             margin-top: 5px;">
                             <br>
-                            <span class="value" id="value-o3">20</span>
+                            <span class="value" id="value-o3">0</span>
                             μg/m3
                         </div>
                         <div class="air-info">
                             <img src="../images/nitrogen_dioxide.png" alt="" style="width: 40px;
                             margin-top: 5px;">
                             <br>
-                            <span class="value" id="value-no2">20</span>
+                            <span class="value" id="value-no2">0</span>
                             μg/m3
                         </div>
                         <div class="air-info">
                             <img src="../images/sulfur_dioxide.png" alt="" style="width: 40px;
                             margin-top: 5px;">
                             <br>
-                            <span class="value" id="value-so2">20</span>
+                            <span class="value" id="value-so2">0</span>
                             μg/m3
                         </div>
                         <div class="air-info">
                             <img src="../images/pm25.png" alt="" style="width: 40px;
                             margin-top: 5px;">
                             <br>
-                            <span class="value" id="value-pm25">20</span>
+                            <span class="value" id="value-pm25">0</span>
                             μg/m3
                         </div>
                         <div class="air-info">
                             <img src="../images/pm10.png" alt="" style="width: 40px;
                             margin-top: 5px;">
                             <br>
-                            <span class="value" id="value-pm10">20</span>
+                            <span class="value" id="value-pm10">0</span>
                             μg/m3
                         </div>
                     </div>
@@ -319,14 +322,14 @@
                         <img src="../images/humidity.png" alt="" id="humidity-icon">
                         <br>
                         %
-                        <span class="value" id="value-humidity">80</span>
+                        <span class="value" id="value-humidity">0</span>
                         <br>
                         Nem
                     </div>
                     <div class="other-item" id="wind">
                         <img src="../images/wind.png" alt="" id="wind-icon">
                         <br>
-                        <span class="value" id="value-wind">3</span>
+                        <span class="value" id="value-wind">0</span>
                         km
                         <br>
                         Rüzgar
@@ -334,7 +337,7 @@
                     <div class="other-item" id="pressure">
                         <img src="../images/pressure.png" alt="" id="pressure-icon">
                         <br>
-                        <span class="value" id="value-pressure">1011</span>
+                        <span class="value" id="value-pressure">0</span>
                         hPa
                         <br>
                         Basınç
@@ -342,14 +345,18 @@
                     <div class="other-item" id="max-min-degree">
                         <img src="../images/temperature.png" alt="" id="max-min-degree-icon">
                         <br>
-                        <span class="value" id="value-max-min-degree">23°C / 17°C</span>
+                        <span class="value" id="value-max-degree">23</span>
+                        °C / 
+                        <span class="value" id="value-min-degree">17</span>
+                        °C
                         <br>
                         Max / Min
                     </div>
                     <div class="other-item" id="feels-like">
                         <img src="../images/thermometer.png" alt="" id="feels-like-icon">
                         <br>
-                        <span class="value" id="value-feels-like">23°C</span>
+                        <span class="value" id="value-feels-like">0</span>
+                        °C
                         <br>
                         Hissedilen
                     </div>
@@ -426,7 +433,7 @@
 
 
 
-
+    <script src="../js/api.js"></script>
     <script src="../js/cities.js"></script>
     <script src="../js/havaDurumu.js"></script>
 </body>

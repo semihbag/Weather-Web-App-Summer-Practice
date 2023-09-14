@@ -5,6 +5,9 @@ let boxCurrent;
 
 let btnWeekly = document.querySelector('#btn-weekly');
 let btnInfo = document.querySelector('#btn-info');
+let airAndAstro = document.querySelector('#air-and-astro');
+let other = document.querySelector('#other');
+let cityInput = document.querySelector('#city-input');
 
 let bool = true;        // true means city box on left side
 let btnSwitch = document.querySelector('#sbtn');
@@ -35,14 +38,14 @@ btnSwitch.addEventListener('click', (e) => {
     bgColorDayBox = (key) ? "rgba(0, 0, 0, 0.1)" : "white";
     shadowColor = (key) ? "white" : "black";
     textColor = (key) ? "white" : "black";
-    humidityIcon.src = (key)? "../images/humidity_white.png" : "../images/humidity.png";
-    windy.src = (key)? "../images/wind_white.png" : "../images/wind.png";
-    feelsLike.src = (key)? "../images/thermometer_white.png" : "../images/thermometer.png";
-    maxMinDegree.src = (key)? "../images/temperature_white.png" : "../images/temperature.png";
-    pressure.src = (key)? "../images/pressure_white.png" : "../images/pressure.png";
-    
-    calenderIcons.forEach(function(item){
-        item.querySelector('img').src = (key)? "../images/calendar_white.png" : "../images/calendar.png";
+    humidityIcon.src = (key) ? "../images/humidity_white.png" : "../images/humidity.png";
+    windy.src = (key) ? "../images/wind_white.png" : "../images/wind.png";
+    feelsLike.src = (key) ? "../images/thermometer_white.png" : "../images/thermometer.png";
+    maxMinDegree.src = (key) ? "../images/temperature_white.png" : "../images/temperature.png";
+    pressure.src = (key) ? "../images/pressure_white.png" : "../images/pressure.png";
+
+    calenderIcons.forEach(function (item) {
+        item.querySelector('img').src = (key) ? "../images/calendar_white.png" : "../images/calendar.png";
     });
 
     document.documentElement.style.setProperty("--shadow_color", shadowColor);
@@ -77,9 +80,9 @@ setIdIcons('day-7', w);
 
 
 // todays icon
-setIdIcons('today-info','sun');
-setIdIcons('sunrise','sunriseAlt');
-setIdIcons('sunset','sunsetAltFill');
+setIdIcons('today-info', 'sun');
+setIdIcons('sunrise', 'sunriseAlt');
+setIdIcons('sunset', 'sunsetAltFill');
 
 // hours icons
 setIdIcons('h0', 'sun');
@@ -122,7 +125,6 @@ function openBox(box) {
 
 // close any page
 function closeBox(box) {
-    console.log("close box");
     box.style.visibility = "hidden";
     box.style.opacity = "0";
     boxCity.style.left = "0";
@@ -133,4 +135,13 @@ function closeBox(box) {
 
 
 
+// set all data
+let data = new DataApi();
 
+
+cityInput.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        data.setAllData(cityInput.value);
+
+    }
+});
