@@ -4,7 +4,6 @@ class DataApi {
     }
 
     setAllData(cityName) {
-        console.log(cityName);
         this.setCurrent(cityName);
     }
 
@@ -45,7 +44,7 @@ class DataApi {
         // set pm10
         airAndAstro.querySelector('#value-pm10').innerHTML = current.air_quality.pm10;
 
-        
+
         // set astro info
         // set sunrise
         airAndAstro.querySelector('#value-sunrise').innerHTML = today.astro.sunrise;
@@ -66,7 +65,7 @@ class DataApi {
 
         // set max degree
         other.querySelector('#value-max-degree').innerHTML = today.day.maxtemp_c;
-        
+
         // set min degree
         other.querySelector('#value-min-degree').innerHTML = today.day.mintemp_c;
 
@@ -80,10 +79,10 @@ class DataApi {
 
         // set h3
         hours.querySelector('#value-h3').innerHTML = today.hour[3].temp_c;
-        
+
         // set h6
         hours.querySelector('#value-h6').innerHTML = today.hour[3].temp_c;
-        
+
         // set h9
         hours.querySelector('#value-h9').innerHTML = today.hour[9].temp_c;
 
@@ -100,15 +99,28 @@ class DataApi {
         hours.querySelector('#value-h21').innerHTML = today.hour[21].temp_c;
 
 
+        // buraya foreach fonk ile haftanın her gününü ayarlanacak
+
+        console.log(forecast.forecastday[0].date_epoch);
+        await this.createDate(forecast.forecastday[0].date_epoch);
         console.log("____________");
         console.log(data);
+        console.log("____________");
+
     }
 
-    async getData() {
-        let url = "http://api.weatherapi.com/v1/current.json?key=4fc41325cbdf41c9be955806231409&q=İstanbul&aqi=yes";
-        const res = await fetch(url);
-        const data = await res.json();
-        console.log(data);
-        return data;
+    async createDate(date_epoch) {
+        const months = [
+            "Oca", "Şub", "Mar",
+            "Nis", "May", "Haz",
+            "Tem", "Ağu", "Eyl",
+            "Eki", "Kas", "Ara"
+        ];
+
+        const days = ["Paz", "Pts", "Sal", "Çar", "Per", "Cum", "Cmt"];
+
+        let normalDate = new Date(date_epoch * 1000);
+        let formattedDate = normalDate.getDate() + " " + months[normalDate.getMonth()] + " " + days[normalDate.getDay()]; 
+        return formattedDate;
     }
 }
