@@ -16,6 +16,8 @@ class DataApi {
 
         let current = data.current;
         let forecast = data.forecast;
+        let today = forecast.forecastday[0];
+
 
         // set name
         boxCity.querySelector('#city-name').innerHTML = data.location.name;
@@ -44,7 +46,6 @@ class DataApi {
         airAndAstro.querySelector('#value-pm10').innerHTML = current.air_quality.pm10;
 
         
-        let today = forecast.forecastday[0];
         // set astro info
         // set sunrise
         airAndAstro.querySelector('#value-sunrise').innerHTML = today.astro.sunrise;
@@ -73,8 +74,34 @@ class DataApi {
         other.querySelector('#value-feels-like').innerHTML = current.feelslike_c;
 
 
+        // set hours
+        // set h0
+        hours.querySelector('#value-h0').innerHTML = today.hour[0].temp_c;
+
+        // set h3
+        hours.querySelector('#value-h3').innerHTML = today.hour[3].temp_c;
+        
+        // set h6
+        hours.querySelector('#value-h6').innerHTML = today.hour[3].temp_c;
+        
+        // set h9
+        hours.querySelector('#value-h9').innerHTML = today.hour[9].temp_c;
+
+        // set h12
+        hours.querySelector('#value-h12').innerHTML = today.hour[12].temp_c;
+
+        // set h15
+        hours.querySelector('#value-h15').innerHTML = today.hour[15].temp_c;
+
+        // set h18
+        hours.querySelector('#value-h18').innerHTML = today.hour[18].temp_c;
+
+        // set h21
+        hours.querySelector('#value-h21').innerHTML = today.hour[21].temp_c;
+
+
+        console.log("____________");
         console.log(data);
-        console.log();
     }
 
     async getData() {

@@ -7,6 +7,7 @@ let btnWeekly = document.querySelector('#btn-weekly');
 let btnInfo = document.querySelector('#btn-info');
 let airAndAstro = document.querySelector('#air-and-astro');
 let other = document.querySelector('#other');
+let hours = document.querySelector('#hours');
 let cityInput = document.querySelector('#city-input');
 
 let bool = true;        // true means city box on left side
