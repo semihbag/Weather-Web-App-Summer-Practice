@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/havaDurumu.css">
-    <title>kaymali deneme</title>
+    <title>Hava Durumu</title>
 </head>
 
 <body>
@@ -13,7 +13,7 @@
         <div class="header">
             <div class="search-holder">
                 <div class="search">
-                    <input type="text" list="city-list" placeholder="şehir ismi giriniz" id="city-input"/>
+                    <input type="text" list="city-list" placeholder="şehir ismi giriniz" id="city-input" />
                     <datalist id="city-list"></datalist>
                     <div class="symbol">
                         <svg class="cloud">
@@ -133,30 +133,45 @@
 
         <div class="container-city-info">
             <div class="box" id="box-city">
-                <span id="city-name">İstanbul</span>
+                <span id="city-name"></span>
                 <div id="today-info">
                     <div class="icon-box"></div>
                     <div class="currend-degree">
                         <span id="d"></span>
                         °C
                     </div>
-                    <span id="w-mode">Güneşli</span>
+                    <span id="w-mode"></span>
                     <br>
-                    Son Güncelleme: 
-                    <span id="last-update">14:00</span>
+                    Son Güncelleme:
+                    <span id="last-update"></span>
 
                 </div>
 
                 <br>
-                <button id="btn-info">Detaylar</button>
-                <button id="btn-weekly">Haftalık</button>
+                <div class="buttons">
+                    <button id="btn-info">Detaylar</button>
+                    <button id="btn-weekly">Haftalık</button>
+                </div>
             </div>
             <div class="box" id="box-weekly">
                 <div class="row" id="row-1">
-                    <div class="day-box box" id="day-1">
+                    <div class="day-box box" id="day-0">
                         <br>
                         <div class="icon-box"></div>
                         <span class="degree">2°C</span>
+                        <br>
+                        <br>
+                        <div class="calendar">
+                            <div class="calender-icon">
+                                <img src="../images/calendar.png" alt="" style="width: 15px;">
+                            </div>
+                            <span class="day-name">Cmt</span>
+                        </div>
+                    </div>
+                    <div class="day-box box" id="day-1">
+                        <br>
+                        <div class="icon-box"></div>
+                        <span class="degree">23°C</span>
                         <br>
                         <br>
                         <div class="calendar">
@@ -179,20 +194,7 @@
                             <span class="day-name">Cmt</span>
                         </div>
                     </div>
-                    <div class="day-box box" id="day-3">
-                        <br>
-                        <div class="icon-box"></div>
-                        <span class="degree">23°C</span>
-                        <br>
-                        <br>
-                        <div class="calendar">
-                            <div class="calender-icon">
-                                <img src="../images/calendar.png" alt="" style="width: 15px;">
-                            </div>
-                            <span class="day-name">Cmt</span>
-                        </div>
-                    </div>
-                    <div class=" day-box box" id="day-4">
+                    <div class=" day-box box" id="day-3">
                         <br>
                         <div class="icon-box"></div>
                         <span class="degree">23°C</span>
@@ -208,6 +210,19 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="row" id="row-2">
+                    <div class="day-box box" id="day-4">
+                        <br>
+                        <div class="icon-box"></div>
+                        <span class="degree">23°C</span>
+                        <br>
+                        <br>
+                        <div class="calendar">
+                            <div class="calender-icon">
+                                <img src="../images/calendar.png" alt="" style="width: 15px;">
+                            </div>
+                            <span class="day-name">Cmt</span>
+                        </div>
+                    </div>
                     <div class="day-box box" id="day-5">
                         <br>
                         <div class="icon-box"></div>
@@ -234,19 +249,6 @@
                             <span class="day-name">Cmt</span>
                         </div>
                     </div>
-                    <div class="day-box box" id="day-7">
-                        <br>
-                        <div class="icon-box"></div>
-                        <span class="degree">23°C</span>
-                        <br>
-                        <br>
-                        <div class="calendar">
-                            <div class="calender-icon">
-                                <img src="../images/calendar.png" alt="" style="width: 15px;">
-                            </div>
-                            <span class="day-name">11 Eyl</span>
-                        </div>
-                    </div>
                     <div class="clearfix"></div>
                 </div>
 
@@ -260,7 +262,7 @@
                             <img src="../images/co2.png" alt="" style="width: 40px;
                             margin-top: 5px;">
                             <br>
-                            <span class="value" id="value-co2">0</span>
+                            <span class="value" id="value-co">0</span>
                             μg/m3
                         </div>
                         <div class="air-info">
@@ -288,7 +290,7 @@
                             <img src="../images/pm25.png" alt="" style="width: 40px;
                             margin-top: 5px;">
                             <br>
-                            <span class="value" id="value-pm25">0</span>
+                            <span class="value" id="value-pm2_5">0</span>
                             μg/m3
                         </div>
                         <div class="air-info">
@@ -345,9 +347,9 @@
                     <div class="other-item" id="max-min-degree">
                         <img src="../images/temperature.png" alt="" id="max-min-degree-icon">
                         <br>
-                        <span class="value" id="value-max-degree">23</span>
-                        °C / 
-                        <span class="value" id="value-min-degree">17</span>
+                        <span class="value" id="value-max-degree">0</span>
+                        °C /
+                        <span class="value" id="value-min-degree">0</span>
                         °C
                         <br>
                         Max / Min
@@ -366,49 +368,57 @@
                 <div class="box" id="hours">
                     <div class="hour" id="h0">
                         <div class="icon-box"></div>
-                        <span>23°C</span>
+                        <span id="value-h0">0</span>
+                        °C
                         <br>
                         00:00
                     </div>
                     <div class="hour" id="h3">
                         <div class="icon-box"></div>
-                        <span>23°C</span>
+                        <span id="value-h3">0</span>
+                        °C
                         <br>
                         03.00
                     </div>
                     <div class="hour" id="h6">
                         <div class="icon-box"></div>
-                        <span>23°C</span>
+                        <span id="value-h6">0</span>
+                        °C
                         <br>
                         06.00
                     </div>
                     <div class="hour" id="h9">
                         <div class="icon-box"></div>
-                        <span>23°C</span>
+                        <span id="value-h9">0</span>
+                        °C
                         <br>
                         09.00
                     </div>
                     <div class="hour" id="h12">
                         <div class="icon-box"></div>
-                        <span>23°C</span>
+                        <span id="value-h12">0</span>
+                        °C
                         <br>
                         12.00
                     </div>
                     <div class="hour" id="h15">
                         <div class="icon-box"></div>
-                        <span>23°C</span>
+                        <span id="value-h15">0</span>
+                        °C
                         <br>
                         15.00
                     </div>
                     <div class="hour" id="h18">
                         <div class="icon-box"></div>
-                        <span>23°C</span>
+                        <span id="value-h18">0</span>
+                        °C
                         <br>
                         18.00
                     </div>
                     <div class="hour" id="h21">
                         <div class="icon-box"></div>
-                        <span>23°C</span>
+                        <span id="value-h21">0</span>
+                        °C
                         <br>
                         21.00
                     </div>

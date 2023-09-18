@@ -13,6 +13,7 @@ let cityInput = document.querySelector('#city-input');
 let bool = true;        // true means city box on left side
 let btnSwitch = document.querySelector('#sbtn');
 let boxes = document.querySelectorAll('.box');
+let dayBoxes = document.querySelectorAll('.day-box');
 
 let iconBoxes = document.querySelectorAll('.icon-box');
 let calenderIcons = document.querySelectorAll('.calender-icon');
@@ -25,6 +26,7 @@ let pressure = document.querySelector('#pressure-icon');
 
 let bgColor;
 let bgColorBox;
+let bgColorBox2;
 let bgColorDayBox;
 let shadowColor;
 let textColor;
@@ -36,6 +38,7 @@ btnSwitch.addEventListener('click', (e) => {
     let key = window.getComputedStyle(document.documentElement).getPropertyValue("background").includes("rgb(175, 228, 228)");
     bgColor = (key) ? "rgb(19, 18, 20)" : "rgb(175, 228, 228)";
     bgColorBox = (key) ? "rgb(29, 28, 31)" : "rgb(248, 240, 230)";
+    bgColorBox2 = (key) ? "rgb(29, 28, 31)" : "rgb(245, 222, 179)";
     bgColorDayBox = (key) ? "rgba(0, 0, 0, 0.1)" : "white";
     shadowColor = (key) ? "white" : "black";
     textColor = (key) ? "white" : "black";
@@ -52,11 +55,10 @@ btnSwitch.addEventListener('click', (e) => {
     document.documentElement.style.setProperty("--shadow_color", shadowColor);
     document.documentElement.style.setProperty("--bground-color", bgColor);
     document.documentElement.style.setProperty("--box-color", bgColorBox);
+    document.documentElement.style.setProperty("--box-color2", bgColorBox2);
     document.documentElement.style.setProperty("--cart-box-color", bgColorDayBox);
     document.documentElement.style.setProperty("--text-color", textColor);
 });
-
-
 
 
 //set day icon
@@ -68,32 +70,6 @@ function setIdIcons(id, icon) {
             selectedDay.querySelector('.icon-box').innerHTML = data;
         });
 }
-
-
-let w = "cloudDrizzleSun";
-setIdIcons('day-1', w);
-setIdIcons('day-2', w);
-setIdIcons('day-3', w);
-setIdIcons('day-4', w);
-setIdIcons('day-5', w);
-setIdIcons('day-6', w);
-setIdIcons('day-7', w);
-
-
-// todays icon
-setIdIcons('today-info', 'sun');
-setIdIcons('sunrise', 'sunriseAlt');
-setIdIcons('sunset', 'sunsetAltFill');
-
-// hours icons
-setIdIcons('h0', 'sun');
-setIdIcons('h3', 'sun');
-setIdIcons('h6', 'sun');
-setIdIcons('h9', 'sun');
-setIdIcons('h12', 'sun');
-setIdIcons('h15', 'sun');
-setIdIcons('h18', 'sun');
-setIdIcons('h21', 'sun');
 
 // open weekly page
 btnWeekly.addEventListener('click', () => {
@@ -134,15 +110,15 @@ function closeBox(box) {
 }
 
 
-
-
 // set all data
 let data = new DataApi();
-
+data.setAllData("İstanbul");
 
 cityInput.addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
+        if (!bool) {
+            closeBox(boxCurrent);
+        }
         data.setAllData(cityInput.value);
-
     }
 });
