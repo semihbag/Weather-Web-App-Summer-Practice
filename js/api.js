@@ -1,3 +1,5 @@
+
+
 class DataApi {
     constructor() {
         this.months = [
@@ -65,9 +67,9 @@ class DataApi {
 
     async setAllData(cityName) {
         try {
-
-
-            let url = `http://api.weatherapi.com/v1/forecast.json?key=4fc41325cbdf41c9be955806231409&q=${cityName}&days=7&aqi=yes&alerts=no`;
+            // here yo have write your own key
+            let WHEATHER_API_KEY = '';
+            let url = `http://api.weatherapi.com/v1/forecast.json?key=${WHEATHER_API_KEY}&q=${cityName}&days=7&aqi=yes&alerts=no`;
             const res = await fetch(url);
             if (!res.ok) {
                 throw new Error('HTTP Hatası: ' + response.status);
